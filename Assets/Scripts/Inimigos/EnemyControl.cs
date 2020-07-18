@@ -17,6 +17,13 @@ public class EnemyControl : MonoBehaviour
     public float speed = 1;
     public bool isDead = false;
     [HideInInspector] public bool onFocusPlayer = false;
+    public Vector3 randomTargetPos = Vector3.zero;
+    public Vector2 randomPosVal = new Vector2(5, 5);
+
+    [Space]
+    [Header("AreaStatus")] //Atributos
+    public GameObject currentArea;
+    public AreaType.areaType currentWorld;
 
 
     public Vector2 speedVar = new Vector2(0.5f, 2);
@@ -30,6 +37,46 @@ public class EnemyControl : MonoBehaviour
     public Transform playerPos;
     public EnemiesManager EnemiesManager;
 
+
+    public void setRandomPos(){
+        float randomTargetX = 0;
+        float randomTargetY = 0;
+
+        randomTargetX = Random.Range(this.transform.position.x - randomPosVal.x, this.transform.position.x + (randomPosVal.x));
+        randomTargetY = Random.Range(this.transform.position.y - randomPosVal.y, this.transform.position.y + (randomPosVal.y));
+
+        BoxCollider2D areaBox = currentArea.GetComponent<BoxCollider2D>();
+        float areaBoxX = areaBox.size.x;
+        float areaBoxY = areaBox.size.y / 2;
+
+
+        int intMaxContX = 100;
+        int intMaxContY = 100;
+        int contRepeatRandomX = 0;
+        int contRepeatRandomY = 0;
+
+        while ((randomTargetX > areaBoxX || randomTargetX < 0) && contRepeatRandomX < intMaxContX){
+            contRepeatRandomX++;
+
+            //float minVal = 1;
+            //float randomDir = randomTargetX > 0 ? Random.Range(this.transform.position.x - (randomPosVal.x), -minVal) : Random.Range(minVal, this.transform.position.x + (randomPosVal.x));
+            //randomTargetX = randomDir;
+            randomTargetX = Random.Range(this.transform.position.x - (randomPosVal.x), this.transform.position.x + (randomPosVal.x));
+        }
+
+        while ((randomTargetY < -areaBoxY || randomTargetY > areaBoxY) && contRepeatRandomY < intMaxContY){
+            contRepeatRandomY++;
+
+            //float minVal = 1;
+            //float randomDir = randomTargetY < -areaBoxY ? Random.Range(this.transform.position.y - (randomPosVal.y), -minVal) : Random.Range(minVal, this.transform.position.y + (randomPosVal.y));
+            //randomTargetY = randomDir;
+
+            randomTargetY = Random.Range(this.transform.position.y - (randomPosVal.y), this.transform.position.y + (randomPosVal.y ));
+        }
+
+        randomTargetPos = new Vector3(randomTargetX, randomTargetY, 0);
+    }
+
     public void setRandomSpeed(){
         speed = Random.Range(speedVar.x, speedVar.y);
 
@@ -38,6 +85,8 @@ public class EnemyControl : MonoBehaviour
 
         RndPlayerFolowPos = new Vector2(randomPosX, randomPosY);
     }
+
+
 
     public void Die(){
         //EnemiesManager.removeAllEnemiesList(this.gameObject);

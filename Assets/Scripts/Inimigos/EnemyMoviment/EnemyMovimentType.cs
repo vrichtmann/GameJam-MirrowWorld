@@ -8,7 +8,7 @@ public class EnemyMovimentType : MonoBehaviour
     {
         Waiting,
         Player,
-        StandyBy,
+        RandomMove,
         BackToBase,
         movimentIntoArea
     };

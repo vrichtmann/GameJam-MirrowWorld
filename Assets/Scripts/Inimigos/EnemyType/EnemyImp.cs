@@ -10,12 +10,13 @@ public class EnemyImp : EnemyControl{
     private void Awake(){
         enemyMoviment = this.GetComponent<EnemyMoviment>();
         enemyControler = this.GetComponent<EnemyControl>();
-        base.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.Player;
 
+        base.setRandomPos();
+        base.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
         base.setRandomSpeed();
     }
 
     void FixedUpdate(){
-        enemyMoviment.followTarget(base.RndPlayerFolowPos);
+         enemyMoviment.followTarget(base.randomTargetPos);
     }
 }
