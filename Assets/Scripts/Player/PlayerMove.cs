@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour{
+public class PlayerMove : Player{
 
     [Space]
     [Header("References")]//Variáveis de Referencias
+    [SerializeField] private GameObject playerAnim;
     [SerializeField] private Animator MyAnimator;
     [SerializeField] private Rigidbody2D MyRigidBody;
-    [SerializeField] private GameObject Message;
-
-    [Space]
-    [Header("Attrubutes")]//Atributos
-    [SerializeField] private int hp = 1;
-    [SerializeField] private int damage = 1;
-    [SerializeField] private float Speed = 0;
+    public GameObject Message;
 
     [Space]
     [Header("Inputs")]//Inputs
@@ -40,7 +35,7 @@ public class PlayerMove : MonoBehaviour{
     }
 
     private void Movement(){
-        MyRigidBody.MovePosition(transform.position + Vector3.ClampMagnitude(direction, 1) * Speed * Time.fixedDeltaTime);
+        MyRigidBody.MovePosition(transform.position + Vector3.ClampMagnitude(direction, 1) * base.Speed * Time.fixedDeltaTime);
     }
 
     private void SetAnimation(){
@@ -67,8 +62,8 @@ public class PlayerMove : MonoBehaviour{
 
     private void Flip(){
         flipX = !flipX;
-        newScale = transform.localScale;
+        newScale = playerAnim.transform.localScale;
         newScale.x *= -1;
-        transform.localScale = newScale;
+        playerAnim.transform.localScale = newScale;
     }
 }
