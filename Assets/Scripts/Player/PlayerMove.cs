@@ -7,6 +7,7 @@ public class PlayerMove : Player{
     [Space]
     [Header("References")]//Variáveis de Referencias
     [SerializeField] private GameObject playerAnim;
+    public GameObject ColMagicCircle;
     [SerializeField] private Animator MyAnimator;
     [SerializeField] private Rigidbody2D MyRigidBody;
     public GameObject Message;

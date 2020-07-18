@@ -265,7 +265,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 304fe76a70356714ab065b8727a05da3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0606a04188814b4b9fe1018316d881c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 314094897}
   - component: {fileID: 314094899}
   - component: {fileID: 314094898}
+  - component: {fileID: 314094900}
   m_Layer: 0
   m_Name: Portal2
   m_TagString: MagicCircle
@@ -419,6 +420,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &314094900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314094895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00351265c4faa5c468fa023f3079c630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inMagicCircle: 0
+  targetPortal: {fileID: 1729184867}
 --- !u!1 &480889888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1662014909}
   - component: {fileID: 1662014912}
+  - component: {fileID: 1662014908}
   - component: {fileID: 1662014911}
   m_Layer: 0
   m_Name: Player
@@ -1426,6 +1442,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1662014908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662014907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1160374374ed642a49e328bbfd3594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1662014909
 Transform:
   m_ObjectHideFlags: 0
@@ -1481,6 +1509,7 @@ MonoBehaviour:
   damage: 1
   Speed: 5
   playerAnim: {fileID: 1042084288}
+  ColMagicCircle: {fileID: 1755687584}
   MyAnimator: {fileID: 1042084289}
   MyRigidBody: {fileID: 1662014911}
   Message: {fileID: 196864424}
@@ -1496,6 +1525,7 @@ GameObject:
   - component: {fileID: 1729184869}
   - component: {fileID: 1729184871}
   - component: {fileID: 1729184870}
+  - component: {fileID: 1729184872}
   m_Layer: 0
   m_Name: Portal1
   m_TagString: MagicCircle
@@ -1613,6 +1643,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1729184872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729184867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00351265c4faa5c468fa023f3079c630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inMagicCircle: 0
+  targetPortal: {fileID: 314094895}
 --- !u!1 &1755687584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,6 +1701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb49e80c7c4006a4288643db78e0ce25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPortal: {fileID: 0}
+  teste: 0
 --- !u!58 &1755687587
 CircleCollider2D:
   m_ObjectHideFlags: 0
