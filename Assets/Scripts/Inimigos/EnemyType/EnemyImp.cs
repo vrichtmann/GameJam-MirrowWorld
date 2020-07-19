@@ -11,6 +11,8 @@ public class EnemyImp : EnemyControl{
         enemyMoviment = this.GetComponent<EnemyMoviment>();
         enemyControler = this.GetComponent<EnemyControl>();
 
+        base.myAnimator.GetComponent<Animator>().SetBool("isDeadWolrd", base.isDead);
+
         base.setRandomPos();
         base.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
         base.setRandomSpeed();

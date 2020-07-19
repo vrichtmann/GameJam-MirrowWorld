@@ -11,6 +11,7 @@ public class PlayerMove : Player{
     [SerializeField] private Animator MyAnimator;
     [SerializeField] private Rigidbody2D MyRigidBody;
     public GameObject Message;
+    public bool isDead = false;
 
     [Space]
     [Header("Inputs")]//Inputs

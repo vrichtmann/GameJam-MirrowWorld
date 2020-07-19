@@ -30,6 +30,7 @@ public class EnemyControl : MonoBehaviour
     [HideInInspector] public Vector2 RndPlayerFolowPos = new Vector3(0, 0);
     public Vector2 randomRageVal = new Vector2(5, 5);
     public Vector2 collsionWall = new Vector2(0, 0);
+    
 
     [Space]
     [Header("References")]//Referencias
@@ -45,6 +46,7 @@ public class EnemyControl : MonoBehaviour
         randomTargetX = Random.Range(this.transform.position.x - randomPosVal.x, this.transform.position.x + (randomPosVal.x));
         randomTargetY = Random.Range(this.transform.position.y - randomPosVal.y, this.transform.position.y + (randomPosVal.y));
 
+
         BoxCollider2D areaBox = currentArea.GetComponent<BoxCollider2D>();
         float areaBoxX = areaBox.size.x;
         float areaBoxY = areaBox.size.y / 2;
@@ -55,7 +57,7 @@ public class EnemyControl : MonoBehaviour
         int contRepeatRandomX = 0;
         int contRepeatRandomY = 0;
 
-        while ((randomTargetX > areaBoxX || randomTargetX < 0) && contRepeatRandomX < intMaxContX){
+        while ((randomTargetX > (currentArea.transform.position.x + areaBoxX) || randomTargetX < currentArea.transform.position.x) && contRepeatRandomX < intMaxContX){
             contRepeatRandomX++;
 
             //float minVal = 1;

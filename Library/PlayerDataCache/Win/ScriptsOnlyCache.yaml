@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - EnemyMoviment
     - MagicCircle
     - MagicCircleCollision
+    - PlayerHitArea
     - PlayerInputs
     - PlayerMove
     Unity.2D.Tilemap.Editor.dll:
@@ -79,6 +80,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 25746}
     - Class: 114
       Script: {instanceID: 25754}
+    - Class: 114
+      Script: {instanceID: 63440}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -534,19 +537,19 @@ ScriptsOnlyBuild:
     className: PlayerInputs
   - hash:
       serializedVersion: 2
-      Hash: 75df94ac7fe53e00116a90e7c44ceac0
+      Hash: dbf90d71e12fb8175048e4636030bd83
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyControl
   - hash:
       serializedVersion: 2
-      Hash: 4309a706de65c679005dc531d1b9406b
+      Hash: 5c0981d321d63cdbb71c96b6719579e9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyGuard
   - hash:
       serializedVersion: 2
-      Hash: 75df94ac7fe53e00116a90e7c44ceac0
+      Hash: dbf90d71e12fb8175048e4636030bd83
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyImp
@@ -580,6 +583,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiesManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AreaType
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerHitArea
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
