@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - DepthManager
     - EnemiesManager
     - EnemyAnimation
     - EnemyImp
@@ -133,6 +134,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 117014}
     - Class: 114
       Script: {instanceID: 128012}
+    - Class: 114
+      Script: {instanceID: 180274}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -684,6 +687,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HeartManager
+  - hash:
+      serializedVersion: 2
+      Hash: 6a7a68f7e8984e7a5617fddf3481cb03
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DepthManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
