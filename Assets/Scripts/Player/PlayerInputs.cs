@@ -14,7 +14,7 @@ public class PlayerInputs : MonoBehaviour{
 
         PlayerMove playerMove = this.GetComponent<PlayerMove>();
         MagicCircleCollision magcCircCol = playerMove.ColMagicCircle.GetComponent<MagicCircleCollision>();
-        bool onPortal = magcCircCol.teste;
+        bool onPortal = magcCircCol.inMagicCircle;
 
         if (onPortal){
             MagicCircle magicCircle = magcCircCol.targetPortal.GetComponent<MagicCircle>();

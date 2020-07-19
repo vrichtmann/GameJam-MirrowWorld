@@ -1,128 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemiesManager : MonoBehaviour {
-    public GameObject[] allEnemies;
-    public ArrayList allEnemiesTarget;
-    private ArrayList sortedEnemies;
-    private ArrayList followingPlayerArray;
-    private bool isSorted = false;
+  
+    [SerializeField]private GameObject normalWorldTXT;
+    [SerializeField] private GameObject deadWorldTXT;
+    [SerializeField] private correctManager correctManager;
 
-   // private void Awake(){
-   //     sortedEnemies = new ArrayList();
-   //     allEnemiesTarget = new ArrayList();
-   //     setEnemyTargetArray();
-   // }
+    [SerializeField] private GameObject[] allEnemies;
 
-   // private void setEnemyTargetArray(){//Deve ter algum jeito melhor... mas não achei o methodo
-   //     for(int i =0; i< allEnemies.Length; i++){
-   //         allEnemiesTarget.Add(allEnemies[i]);
-   //     }
-   // }
+    [SerializeField] private Vector2 lastSorted = new Vector2(5, 5);
+    [SerializeField] private Vector2 enemiesWorld = new Vector2(0, 0);
 
-   //void Update(){
-   //     if (Input.GetKeyDown(KeyCode.Alpha1)){//Velocidade
-   //         getElemiesCountArray(3);
-   //         incrementPowerUP("velocity");
-   //     }else if (Input.GetKeyDown(KeyCode.Alpha2)){//Scale
-   //         getElemiesCountArray(3);
-   //         incrementPowerUP("scale");
-   //     }else if (Input.GetKeyDown(KeyCode.Alpha3)){//Fire Shield
-   //         getElemiesCountArray(3);
-   //         incrementPowerUP("fireShield");
-   //     }else if (Input.GetKeyDown(KeyCode.Alpha4)){//SummonClones
-   //         getElemiesCountArray(3);
-   //         incrementPowerUP("summonClones");
-   //     }
-   // }
 
-   // public void getMinionsPower(string _power, int _numberEnemies, float _timer){//(velocity,scale,fireShield,summonClones), 3(numero de inimigos), 5(segundos)
-   //     getElemiesCountArray(_numberEnemies);
-   //     incrementPowerUP(_power, _timer);
-   // }
+    private void Awake(){
+        sortNumbersWorld();
+        contEnemiesWorld();
+   }
 
-   // public void getElemiesCountArray(int _sortedNumber){
+   public void sortNumbersWorld(){
+        int sorted1 = Random.RandomRange(0, allEnemies.Length);
+        int sorted2 = allEnemies.Length - sorted1;
+        int maxCont = 100;
+        int contRepeat = 0;
 
-   //     filterEnemiesFollow();
+        while(contRepeat < maxCont && (sorted1 == lastSorted.x && sorted2 == lastSorted.y)){
+            contRepeat++;
+            sorted1 = Random.RandomRange(0, allEnemies.Length);
+            sorted2 = allEnemies.Length - sorted1;
+        }
 
-   //     if (_sortedNumber > followingPlayerArray.Count) _sortedNumber = (followingPlayerArray.Count);
+        normalWorldTXT.GetComponent<TextMeshProUGUI>().text = sorted1.ToString();
+        deadWorldTXT.GetComponent<TextMeshProUGUI>().text = sorted2.ToString();
 
-   //     sortedEnemies = new ArrayList();
+        lastSorted = new Vector2(sorted1, sorted2);
+    }
 
-   //     int contRepeatSorted = 0;
+    public void contEnemiesWorld(){
+        int deadEnemies = 0;
+        int normalEnemies = 0;
+        for (var i=0;i< allEnemies.Length; i++){
+            bool enemyIsDead = allEnemies[i].GetComponent<EnemyControl>().isDead;
+            if (enemyIsDead){
+                deadEnemies++;
+            }else{
+                normalEnemies++;
+            }
+        }
 
-   //     for (int i = 0; i < _sortedNumber; i++){
-   //         int randomIndex = Random.Range(0, followingPlayerArray.Count);
+        enemiesWorld = new Vector2(normalEnemies, deadEnemies);
+    }
 
-   //         while(sortedEnemies.IndexOf(randomIndex) != -1 && contRepeatSorted < 100){
-   //             randomIndex = Random.Range(0, followingPlayerArray.Count);
-   //             contRepeatSorted++;
-   //         }
+    public void checkEnemieCount(){
+        contEnemiesWorld();
 
-   //         sortedEnemies.Add(randomIndex);           
-   //     }
-   // }
+        Debug.Log("lastSorted : " + lastSorted);
+        Debug.Log("enemiesWorld : " + enemiesWorld);
 
-   // public void filterEnemiesFollow()
-   // {
-   //     int enemiesFollow = 0;
-   //     followingPlayerArray = new ArrayList();
-
-   //     for (int i = 0; i < allEnemiesTarget.Count; i++){
-   //         GameObject enemyTarget = allEnemiesTarget[i] as GameObject;
-   //         EnemyController enemyController = enemyTarget.GetComponent<EnemyController>();
-
-   //         if (enemyController.enemyMovimentType.ToString() == "Player"){
-   //             followingPlayerArray.Add(enemyTarget);
-   //         }
-   //     }
-   // }
-
-   // public void incrementPowerUP(string _powerUP, float _timer = 0){
-   //     isSorted = true;
-        
-   //     for (int i = 0; i < sortedEnemies.Count; i++){
-
-   //         int sortedEnemy = System.Convert.ToInt32(sortedEnemies[i]);
-
-   //         GameObject FollowingEnemy = followingPlayerArray[sortedEnemy] as GameObject;
-
-   //         EnemyPowerUP enemyPowerUP = FollowingEnemy.GetComponent<EnemyPowerUP>();
-   //         enemyPowerUP.Aurea();
-
-   //         if (_powerUP == "velocity"){
-   //             enemyPowerUP.incrementEnemySpeed(_timer);
-   //         }else if(_powerUP == "scale"){
-   //             enemyPowerUP.incrementEnemyScale(_timer);
-   //         }else if (_powerUP == "fireShield"){
-   //             enemyPowerUP.incrementEnemyFireShield(_timer);
-   //         }else if (_powerUP == "summonClones"){
-   //             enemyPowerUP.incrementEnemySummonClones();
-   //         }
-   //     }
-   // }
-
-   // public void removeAllEnemiesList(GameObject _enemyDie){//Remove Inimigo de todas as listas
-   //     for (int i = 0; i < allEnemiesTarget.Count; i++){
-   //         GameObject enemyArray = allEnemiesTarget[i] as GameObject;
-   //         if (enemyArray.name == _enemyDie.name){
-   //             allEnemiesTarget.RemoveAt(i);
-   //             break;
-   //         }
-
-   //         EnemyGuard isEnemyGuard = _enemyDie.GetComponent<EnemyGuard>();
-   //         if (isEnemyGuard != null){
-   //             EnemyArea enemyArea = isEnemyGuard.initArea.GetComponent<EnemyArea>();
-   //             for(int j =0; j < enemyArea.enemiesAlertArray.Count; j++){
-   //                 GameObject currentEnemyAlert = enemyArea.enemiesAlertArray[j] as GameObject;
-   //                 if(currentEnemyAlert.name == _enemyDie.name){
-   //                     enemyArea.enemiesAlertArray.RemoveAt(j);
-   //                     break;
-   //                 }
-   //             }
-   //         }
-   //     }
-   // }
+        if (lastSorted.x == enemiesWorld.x && lastSorted.y == enemiesWorld.y){
+            Debug.Log("ACERTOU MISERAVI");
+            sortNumbersWorld();
+            correctManager.showCorrectResponse();
+        }
+    }
 
 }

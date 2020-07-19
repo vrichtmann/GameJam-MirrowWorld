@@ -43,6 +43,7 @@ public class EnemyControl : MonoBehaviour
     public GameObject myAnimator;
     public Transform playerPos;
     public EnemiesManager EnemiesManager;
+    public GameObject enemyManager;
 
 
     public void setRandomPos(){
@@ -116,10 +117,6 @@ public class EnemyControl : MonoBehaviour
 
         this.transform.position = new Vector3((this.transform.position.x * -1), (this.transform.position.y), this.transform.position.z);
         setRandomPos();
-    }
-
-    public void Die(){
-        //EnemiesManager.removeAllEnemiesList(this.gameObject);
-        Destroy(this.gameObject);
+        enemyManager.GetComponent<EnemiesManager>().checkEnemieCount();
     }
 }

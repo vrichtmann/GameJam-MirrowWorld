@@ -11,6 +11,7 @@ public class PlayerMove : Player{
     [SerializeField] private Animator MyAnimator;
     [SerializeField] private Rigidbody2D MyRigidBody;
     public GameObject Message;
+    public GameObject heartManager;
     public bool isDead = false;
 
     [Space]
@@ -81,6 +82,8 @@ public class PlayerMove : Player{
         invunerateTimer = invunerateStopTimer;
         playerAnim.GetComponent<SpriteRenderer>().color = Color.red;
         MyRigidBody.AddForce(_enemyDir * -2000f);
+
+        heartManager.GetComponent<HeartManager>().updateLife(base.hp);
     }
 
     private void invunerableTime(){
