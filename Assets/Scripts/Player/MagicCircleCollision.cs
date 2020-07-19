@@ -7,7 +7,7 @@ public class MagicCircleCollision : MonoBehaviour{
     public GameObject targetPortal;
     public bool inMagicCircle = false;
 
-    private void OnTriggerEnter2D(Collider2D collision){
+    private void OnTriggerStay2D(Collider2D collision){
         if (collision.gameObject.CompareTag("MagicCircle")){
             targetPortal = collision.gameObject;
             this.GetComponentInParent<PlayerMove>().Message.active = true;

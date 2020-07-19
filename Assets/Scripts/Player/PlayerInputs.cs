@@ -23,7 +23,7 @@ public class PlayerInputs : MonoBehaviour{
         }else if(playerMove.cooldownAtack == 0){
             Debug.Log("Attack");
             playerMove.playerAnim.GetComponent<Animator>().SetBool("beAttacking", true);
-            this.GetComponent<Player>().beAttacking = true;
+            playerMove.Speed = 0;
             playerMove.cooldownAtack = playerMove.cooldownAtackTimer;
         }
     }

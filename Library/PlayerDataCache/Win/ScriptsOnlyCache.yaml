@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - EnemyAnimation
     - EnemyImp
     - EnemyMoviment
+    - HeartManager
     - MagicCircle
     - MagicCircleCollision
     - PlayerAnimation
@@ -13,12 +14,19 @@ ScriptsOnlyBuild:
     - PlayerHitArea
     - PlayerInputs
     - PlayerMove
+    - correctManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -26,10 +34,15 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -50,6 +63,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 58
@@ -68,8 +83,18 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9660}
+    - Class: 114
+      Script: {instanceID: 9862}
     - Class: 114
       Script: {instanceID: 9934}
+    - Class: 114
+      Script: {instanceID: 10264}
+    - Class: 114
+      Script: {instanceID: 10286}
     - Class: 114
       Script: {instanceID: 10318}
     - Class: 114
@@ -79,26 +104,50 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10682}
     - Class: 114
+      Script: {instanceID: 10868}
+    - Class: 114
+      Script: {instanceID: 10882}
+    - Class: 114
       Script: {instanceID: 11030}
+    - Class: 114
+      Script: {instanceID: 11058}
     - Class: 114
       Script: {instanceID: 11080}
     - Class: 114
       Script: {instanceID: 11100}
     - Class: 114
+      Script: {instanceID: 11124}
+    - Class: 114
       Script: {instanceID: 11258}
+    - Class: 114
+      Script: {instanceID: 11292}
+    - Class: 114
+      Script: {instanceID: 11500}
     - Class: 114
       Script: {instanceID: 15850}
     - Class: 114
       Script: {instanceID: 19896}
     - Class: 114
       Script: {instanceID: 63926}
+    - Class: 114
+      Script: {instanceID: 117014}
+    - Class: 114
+      Script: {instanceID: 128012}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -193,7 +242,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 4b610971887afc2851ffc7641d2f5482
+      Hash: c6a525ee809e66f5543e4d11a8a69360
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMove
@@ -277,7 +326,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 972928e6f00f6c38ff8c54d4c391dec8
+      Hash: 24d055af9946940b5738bf0b5ed148b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyControl
@@ -337,7 +386,7 @@ ScriptsOnlyBuild:
     className: PlayerInputs
   - hash:
       serializedVersion: 2
-      Hash: 1e432afe08158342fe22987d0a144be1
+      Hash: 3222bc9989b3255fc05211cb13389a60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiesManager
@@ -367,7 +416,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 917424954dfa22e812d97ba553303b4a
+      Hash: 6b3cc0239239418da7ed0cdfee387279
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyGuard
@@ -379,7 +428,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 972928e6f00f6c38ff8c54d4c391dec8
+      Hash: 24d055af9946940b5738bf0b5ed148b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyImp
@@ -457,7 +506,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: c5f1487be7c5691789e2e99e9a0ca4ba
+      Hash: a997e9b1f5f1b1258f5effa026777aef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MagicCircleCollision
@@ -623,6 +672,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerAnimation
+  - hash:
+      serializedVersion: 2
+      Hash: 32a029c136ccfbb1b830f1839a8f695b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: correctManager
+  - hash:
+      serializedVersion: 2
+      Hash: 903a439d1b88534e301ee356e5475cb6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HeartManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
