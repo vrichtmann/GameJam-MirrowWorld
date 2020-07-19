@@ -16,8 +16,10 @@ public class EnemyMoviment : MonoBehaviour{
 
         if (enemyControler.enemyMovimentType.ToString() == "Player" || target != default(Vector3))
         {
-            if (enemyControler.enemyMovimentType.ToString() == "Player"){//Follow Player
+            if (enemyControler.enemyMovimentType.ToString() == "Player" ){//Follow Player
                 target = enemyControler.RndPlayerFolowPos;
+
+                if(enemyControler.isDead != enemyControler.playerPos.GetComponent<PlayerMove>().isDead) enemyControler.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
 
                 Vector3 playerNearPosition = new Vector3(enemyControler.playerPos.position.x + target.x + enemyControler.collsionWall.x, enemyControler.playerPos.position.y + target.y + enemyControler.collsionWall.y, enemyControler.playerPos.position.z);
                 Vector3 playerPosition = enemyControler.playerPos.position;
@@ -41,11 +43,12 @@ public class EnemyMoviment : MonoBehaviour{
                 EnemyAnimation enemyAnimation = enemyControler.myAnimator.GetComponent<EnemyAnimation>();
                 enemyAnimation.updateEnemyAnimation(playerDif); // UPDATE ANIMATION
 
-                if (Mathf.Abs(playerDif.x) < 0.1f || Mathf.Abs(playerDif.y) < 0.1f)
-                {
+                if (Mathf.Abs(playerDif.x) < 0.1f || Mathf.Abs(playerDif.y) < 0.1f){
                     enemyControler.setRandomPos();
                 }
 
+            }else if(enemyControler.enemyMovimentType.ToString() == "Attack"){
+                if (enemyControler.isDead != enemyControler.playerPos.GetComponent<PlayerMove>().isDead) enemyControler.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
             }
             //else if (target != default(Vector3)){//Voltando para a Base 
             //    transform.position = Vector2.MoveTowards(transform.position, target, (enemyControler.speed) * Time.deltaTime);

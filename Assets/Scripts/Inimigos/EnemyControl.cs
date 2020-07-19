@@ -16,6 +16,12 @@ public class EnemyControl : MonoBehaviour
     [SerializeField] private int damage = 1;
     public float speed = 1;
     public bool isDead = false;
+    public bool beAttacking = false;
+    public bool playerDamage = false;
+
+    public int cooldownAttack = 0;
+    public int cooldownAttackTimer = 0;
+
     [HideInInspector] public bool onFocusPlayer = false;
     public Vector3 randomTargetPos = Vector3.zero;
     public Vector2 randomPosVal = new Vector2(5, 5);

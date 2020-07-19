@@ -18,6 +18,7 @@ public class PlayerInputs : MonoBehaviour{
 
         if (onPortal){
             MagicCircle magicCircle = magcCircCol.targetPortal.GetComponent<MagicCircle>();
+            playerMove.isDead = !playerMove.isDead;
             magicCircle.teleport(this.gameObject);
         }
     }

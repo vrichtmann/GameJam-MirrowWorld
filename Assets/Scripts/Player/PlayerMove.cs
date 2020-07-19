@@ -21,6 +21,10 @@ public class PlayerMove : Player{
     private Vector3 newScale;
     private bool isWalking;
 
+    [Space]
+    [Header("Damage")]//Damage
+    private float invunerateTimer = 0;
+    [SerializeField] private float invunerateStopTimer = 20;
 
     void Update(){
         axisY = Input.GetAxis("Vertical");
@@ -34,6 +38,7 @@ public class PlayerMove : Player{
 
     private void FixedUpdate(){
         Movement();
+        invunerableTime();
     }
 
     private void Movement(){
@@ -67,5 +72,21 @@ public class PlayerMove : Player{
         newScale = playerAnim.transform.localScale;
         newScale.x *= -1;
         playerAnim.transform.localScale = newScale;
+    }
+
+    public void getDamage(Vector3 _enemyDir){    
+        Debug.Log("Get Damage");
+        base.hp -= 1;
+        invunerateTimer = invunerateStopTimer;
+        playerAnim.GetComponent<SpriteRenderer>().color = Color.red;
+        MyRigidBody.AddForce(_enemyDir * -2000f);
+    }
+
+    private void invunerableTime(){
+        if(invunerateTimer > 0){
+            invunerateTimer--;
+        }else{
+            playerAnim.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 }

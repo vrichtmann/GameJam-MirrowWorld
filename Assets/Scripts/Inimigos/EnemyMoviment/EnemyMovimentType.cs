@@ -9,6 +9,7 @@ public class EnemyMovimentType : MonoBehaviour
         Waiting,
         Player,
         RandomMove,
+        Attack,
         BackToBase,
         movimentIntoArea
     };
