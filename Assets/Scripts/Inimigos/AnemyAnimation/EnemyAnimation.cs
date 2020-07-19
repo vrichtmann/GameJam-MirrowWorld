@@ -26,9 +26,9 @@ public class EnemyAnimation : MonoBehaviour{
     }
 
     public void checkPlayerDamage(){
-        Debug.Log("PLAYER DAMAGE 0");
+        //Debug.Log("PLAYER DAMAGE 0");
         if (enemyControl.playerDamage){
-            Debug.Log("PLAYER DAMAGE 1");
+            //Debug.Log("PLAYER DAMAGE 1");
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
             float distX = this.transform.parent.transform.position.x - player.transform.parent.position.x;

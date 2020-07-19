@@ -22,7 +22,7 @@ public class EnemyImp : EnemyControl{
          enemyMoviment.followTarget(base.randomTargetPos);
 
         if(base.cooldownAttack > 0){
-            cooldownAttack--;
+            base.cooldownAttack--;
         }
     }
 }

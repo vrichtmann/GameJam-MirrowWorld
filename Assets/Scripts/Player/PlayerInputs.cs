@@ -20,6 +20,11 @@ public class PlayerInputs : MonoBehaviour{
             MagicCircle magicCircle = magcCircCol.targetPortal.GetComponent<MagicCircle>();
             playerMove.isDead = !playerMove.isDead;
             magicCircle.teleport(this.gameObject);
+        }else if(playerMove.cooldownAtack == 0){
+            Debug.Log("Attack");
+            playerMove.playerAnim.GetComponent<Animator>().SetBool("beAttacking", true);
+            this.GetComponent<Player>().beAttacking = true;
+            playerMove.cooldownAtack = playerMove.cooldownAtackTimer;
         }
     }
 }

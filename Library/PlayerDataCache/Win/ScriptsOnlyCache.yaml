@@ -7,6 +7,9 @@ ScriptsOnlyBuild:
     - EnemyMoviment
     - MagicCircle
     - MagicCircleCollision
+    - PlayerAnimation
+    - PlayerAttack
+    - PlayerHit
     - PlayerHitArea
     - PlayerInputs
     - PlayerMove
@@ -23,6 +26,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -65,23 +69,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13286}
+      Script: {instanceID: 9934}
     - Class: 114
-      Script: {instanceID: 15640}
+      Script: {instanceID: 10318}
     - Class: 114
-      Script: {instanceID: 18866}
+      Script: {instanceID: 10484}
     - Class: 114
-      Script: {instanceID: 18884}
+      Script: {instanceID: 10506}
     - Class: 114
-      Script: {instanceID: 25716}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 25732}
+      Script: {instanceID: 11030}
     - Class: 114
-      Script: {instanceID: 25746}
+      Script: {instanceID: 11080}
     - Class: 114
-      Script: {instanceID: 25754}
+      Script: {instanceID: 11100}
     - Class: 114
-      Script: {instanceID: 63440}
+      Script: {instanceID: 11258}
+    - Class: 114
+      Script: {instanceID: 15850}
+    - Class: 114
+      Script: {instanceID: 19896}
+    - Class: 114
+      Script: {instanceID: 63926}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -183,6 +193,12 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 4b610971887afc2851ffc7641d2f5482
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMove
+  - hash:
+      serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -261,6 +277,12 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 972928e6f00f6c38ff8c54d4c391dec8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyControl
+  - hash:
+      serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -279,10 +301,22 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: d6fb9099df3b68fcfc255dc4c349b593
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MagicCircle
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AreaType
   - hash:
       serializedVersion: 2
       Hash: 97ace6213ad0f149b0917a4c669c6ca3
@@ -295,6 +329,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerInputs
+  - hash:
+      serializedVersion: 2
+      Hash: 1e432afe08158342fe22987d0a144be1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemiesManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -321,16 +367,34 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 917424954dfa22e812d97ba553303b4a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyGuard
+  - hash:
+      serializedVersion: 2
       Hash: 92da9881aed190e8bb74661bcd74aa2c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 972928e6f00f6c38ff8c54d4c391dec8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyImp
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 19fdf4fc5a65442ff4455725b50dd8f6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player
   - hash:
       serializedVersion: 2
       Hash: 12e64d607873da15ad3f833620350d51
@@ -381,10 +445,28 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 97a2021e101add52c9809a91423e6481
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyAnimation
+  - hash:
+      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: c5f1487be7c5691789e2e99e9a0ca4ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MagicCircleCollision
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerHitArea
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -405,6 +487,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyMoviment
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -415,6 +503,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyType
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyMovimentType
   - hash:
       serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
@@ -507,95 +607,23 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: cbbc3af144713af5eb04157e2e048201
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerMove
-  - hash:
-      serializedVersion: 2
-      Hash: c5f1487be7c5691789e2e99e9a0ca4ba
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MagicCircleCollision
-  - hash:
-      serializedVersion: 2
-      Hash: f0d02c79daf4c373847e44ff9259a675
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Player
-  - hash:
-      serializedVersion: 2
-      Hash: d6fb9099df3b68fcfc255dc4c349b593
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MagicCircle
+    className: PlayerAttack
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerInputs
-  - hash:
-      serializedVersion: 2
-      Hash: dbf90d71e12fb8175048e4636030bd83
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyControl
-  - hash:
-      serializedVersion: 2
-      Hash: 5c0981d321d63cdbb71c96b6719579e9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyGuard
-  - hash:
-      serializedVersion: 2
-      Hash: dbf90d71e12fb8175048e4636030bd83
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyImp
+    className: PlayerHit
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: EnemyType
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyMoviment
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyMovimentType
-  - hash:
-      serializedVersion: 2
-      Hash: 97a2021e101add52c9809a91423e6481
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyAnimation
-  - hash:
-      serializedVersion: 2
-      Hash: 1e432afe08158342fe22987d0a144be1
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemiesManager
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AreaType
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerHitArea
+    className: PlayerAnimation
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/victor.richtmann/Desktop/build/GameJan-LiTH.exe
+  playerPath: C:/Users/victor.richtmann/Desktop/GameJam_Build/GameJan-LiTH.exe

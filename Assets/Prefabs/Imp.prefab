@@ -197,6 +197,8 @@ MonoBehaviour:
   isDead: 1
   beAttacking: 0
   playerDamage: 0
+  cooldownAttack: 0
+  cooldownAttackTimer: 100
   onFocusPlayer: 0
   randomTargetPos: {x: 0.5, y: 0.5, z: 0}
   randomPosVal: {x: 3, y: 3}
@@ -349,7 +351,7 @@ GameObject:
   - component: {fileID: 7862367075661385554}
   m_Layer: 0
   m_Name: PlayerAttack
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

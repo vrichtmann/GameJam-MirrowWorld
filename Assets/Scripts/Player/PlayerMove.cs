@@ -6,7 +6,7 @@ public class PlayerMove : Player{
 
     [Space]
     [Header("References")]//Variáveis de Referencias
-    [SerializeField] private GameObject playerAnim;
+    public GameObject playerAnim;
     public GameObject ColMagicCircle;
     [SerializeField] private Animator MyAnimator;
     [SerializeField] private Rigidbody2D MyRigidBody;
@@ -34,6 +34,7 @@ public class PlayerMove : Player{
 
         SetAnimation();
         CheckFlip();
+        checkCoolDownAttack();
     }
 
     private void FixedUpdate(){
@@ -87,6 +88,12 @@ public class PlayerMove : Player{
             invunerateTimer--;
         }else{
             playerAnim.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    private void checkCoolDownAttack(){
+        if (cooldownAtack > 0){
+            cooldownAtack--;
         }
     }
 }

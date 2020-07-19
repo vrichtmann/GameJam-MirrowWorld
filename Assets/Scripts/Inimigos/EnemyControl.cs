@@ -20,7 +20,7 @@ public class EnemyControl : MonoBehaviour
     public bool playerDamage = false;
 
     public int cooldownAttack = 0;
-    public int cooldownAttackTimer = 0;
+    public int cooldownAttackTimer = 50;
 
     [HideInInspector] public bool onFocusPlayer = false;
     public Vector3 randomTargetPos = Vector3.zero;
@@ -94,7 +94,29 @@ public class EnemyControl : MonoBehaviour
         RndPlayerFolowPos = new Vector2(randomPosX, randomPosY);
     }
 
+    public void changeWold(){
+        enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
 
+        Debug.Log("CHANGE WORLD");
+        //isDead = !isDead;
+
+        if (currentWorld == AreaType.areaType.deadWorld){
+            currentWorld = AreaType.areaType.world;
+            currentArea = GameObject.FindGameObjectWithTag("woldArea");
+            myAnimator.GetComponent<Animator>().SetBool("isDeadWolrd", false);
+            isDead = false;
+        }
+        else{
+            currentWorld = AreaType.areaType.deadWorld;
+            currentArea = GameObject.FindGameObjectWithTag("deadWoldArea");
+            myAnimator.GetComponent<Animator>().SetBool("isDeadWolrd", true);
+            isDead = true;
+        }
+        playerDamage = false;
+
+        this.transform.position = new Vector3((this.transform.position.x * -1), (this.transform.position.y), this.transform.position.z);
+        setRandomPos();
+    }
 
     public void Die(){
         //EnemiesManager.removeAllEnemiesList(this.gameObject);
