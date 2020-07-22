@@ -1839,6 +1839,7 @@ MonoBehaviour:
   - {fileID: 1253745762}
   - {fileID: 639069368}
   - {fileID: 221838763}
+  playerMove: {fileID: 1662014912}
 --- !u!1 &1042084288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,11 +3564,13 @@ MonoBehaviour:
   cooldownAtackTimer: 20
   playerAnim: {fileID: 1042084288}
   ColMagicCircle: {fileID: 1755687584}
+  ColEnemies: {fileID: 378890806}
   MyAnimator: {fileID: 1042084289}
   MyRigidBody: {fileID: 1662014911}
   Message: {fileID: 196864424}
   heartManager: {fileID: 1011130938}
   isDead: 1
+  playerIsDead: 0
   invunerateStopTimer: 20
 --- !u!1 &1729184867
 GameObject:

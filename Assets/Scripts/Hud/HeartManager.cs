@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HeartManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] correctManagers;
+    public PlayerMove playerMove;
 
     public void updateLife(int _currentLife){
         for(int i = 0; i < correctManagers.Length; i++){
@@ -17,7 +18,8 @@ public class HeartManager : MonoBehaviour
         }
 
         if(_currentLife <= 0)   {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            playerMove.die();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

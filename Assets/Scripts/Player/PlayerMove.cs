@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : Player{
 
@@ -8,11 +9,13 @@ public class PlayerMove : Player{
     [Header("References")]//Variáveis de Referencias
     public GameObject playerAnim;
     public GameObject ColMagicCircle;
+    public GameObject ColEnemies;
     [SerializeField] private Animator MyAnimator;
     [SerializeField] private Rigidbody2D MyRigidBody;
     public GameObject Message;
     public GameObject heartManager;
     public bool isDead = false;
+    public bool playerIsDead = false;
 
     [Space]
     [Header("Inputs")]//Inputs
@@ -28,14 +31,16 @@ public class PlayerMove : Player{
     [SerializeField] private float invunerateStopTimer = 20;
 
     void Update(){
-        axisY = Input.GetAxis("Vertical");
-        axisX = Input.GetAxis("Horizontal");
-        direction.x = axisX;
-        direction.y = axisY;
+        if (!playerIsDead){
+            axisY = Input.GetAxis("Vertical");
+            axisX = Input.GetAxis("Horizontal");
+            direction.x = axisX;
+            direction.y = axisY;
 
-        SetAnimation();
-        CheckFlip();
-        checkCoolDownAttack();
+            SetAnimation();
+            CheckFlip();
+            checkCoolDownAttack();
+        }
     }
 
     private void FixedUpdate(){
@@ -98,5 +103,18 @@ public class PlayerMove : Player{
         if (cooldownAtack > 0){
             cooldownAtack--;
         }
+    }
+
+    public void die(){
+        base.Speed = 0;
+        MyAnimator.SetBool("isDead", true);
+        ColEnemies.SetActive(false);
+        playerIsDead = true;
+        StartCoroutine(restartLevel(2.0f));
+    }
+
+    private IEnumerator restartLevel(float waitTime) {
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
