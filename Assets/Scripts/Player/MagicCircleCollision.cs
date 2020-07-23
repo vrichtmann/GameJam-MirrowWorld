@@ -10,6 +10,7 @@ public class MagicCircleCollision : MonoBehaviour{
     private void OnTriggerStay2D(Collider2D collision){
         if (collision.gameObject.CompareTag("MagicCircle")){
             targetPortal = collision.gameObject;
+            collision.GetComponent<SpriteRenderer>().enabled = true;
             this.GetComponentInParent<PlayerMove>().Message.active = true;
             inMagicCircle = true;
         }
@@ -17,6 +18,7 @@ public class MagicCircleCollision : MonoBehaviour{
 
     private void OnTriggerExit2D(Collider2D collision){
         if (collision.gameObject.CompareTag("MagicCircle")){
+            collision.GetComponent<SpriteRenderer>().enabled = false;
             this.GetComponentInParent<PlayerMove>().Message.active = false;
             inMagicCircle = false;
         }

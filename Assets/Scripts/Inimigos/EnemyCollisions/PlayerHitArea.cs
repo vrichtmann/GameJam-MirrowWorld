@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerHitArea : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D collision){
+        Debug.Log("FILHA DA PUTAAAA");
         if (collision.gameObject.CompareTag("Player") ) {
+            
             PlayerMove playerMove = collision.gameObject.GetComponentInParent<PlayerMove>();
             EnemyControl enemyControl = this.GetComponentInParent<EnemyControl>();
 

@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision){
         PlayerMove playerMove = collision.gameObject.GetComponentInParent<PlayerMove>();
         if (collision.gameObject.CompareTag("Player")){
+            Debug.Log("QUE PORRA QUE EU FIZ");
+
             EnemyControl enemyControl = this.GetComponentInParent<EnemyControl>();
 
             if (playerMove.beAttacking){
