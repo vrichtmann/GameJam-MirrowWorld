@@ -19,10 +19,14 @@ public class EnemyImp : EnemyControl{
     }
 
     void FixedUpdate(){
-         enemyMoviment.followTarget(base.randomTargetPos);
+        if (!base.inteleport)
+        {
+            enemyMoviment.followTarget(base.randomTargetPos);
 
-        if(base.cooldownAttack > 0){
-            base.cooldownAttack--;
+            if (base.cooldownAttack > 0)
+            {
+                base.cooldownAttack--;
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ public class PlayerHit : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.CompareTag("Player")){
             EnemyControl enemyControl = this.GetComponentInParent<EnemyControl>();
-            if(enemyControl.cooldownAttack == 0){
+            if(!enemyControl.inteleport && enemyControl.cooldownAttack == 0){
                 enemyControl.playerDamage = true;
                 enemyControl.cooldownAttack = enemyControl.cooldownAttackTimer;
             }
@@ -18,7 +18,7 @@ public class PlayerHit : MonoBehaviour{
         if (collision.gameObject.CompareTag("Player")){
             EnemyControl enemyControl = this.GetComponentInParent<EnemyControl>();
 
-            if (enemyControl.cooldownAttack == 0){
+            if (!enemyControl.inteleport && enemyControl.cooldownAttack == 0){
                 enemyControl.playerDamage = false;
             }
         }

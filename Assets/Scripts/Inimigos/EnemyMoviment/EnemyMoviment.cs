@@ -61,8 +61,7 @@ public class EnemyMoviment : MonoBehaviour{
         }
     }
 
-    public void setCurrentEnemy(string _targetState)
-    {
+    public void setCurrentEnemy(string _targetState){
         Debug.Log("AKII");
         //enemyControler.enemyMovimentType = _targetState;
     }

@@ -1503,6 +1503,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -1894,6 +1900,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -2029,6 +2041,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -2339,6 +2357,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -2593,6 +2617,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -3475,6 +3505,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -3734,6 +3770,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -4661,6 +4703,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -4919,6 +4967,12 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     - target: {fileID: 4539352986585576289, guid: 81b82e271f3790a48a51079ce7366737,
         type: 3}
       propertyPath: m_Sprite
@@ -5014,5 +5068,11 @@ PrefabInstance:
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 143597590}
+    - target: {fileID: 4539352986276323306, guid: 81b82e271f3790a48a51079ce7366737,
+        type: 3}
+      propertyPath: smokePrefab
+      value: 
+      objectReference: {fileID: 500358677428086027, guid: af9c73733351c754baeb6a5f633ddac7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b82e271f3790a48a51079ce7366737, type: 3}

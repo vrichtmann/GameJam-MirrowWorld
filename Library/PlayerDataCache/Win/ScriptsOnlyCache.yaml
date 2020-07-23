@@ -15,6 +15,8 @@ ScriptsOnlyBuild:
     - PlayerHitArea
     - PlayerInputs
     - PlayerMove
+    - SelfDestruction
+    - Teleport
     - correctManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -136,7 +138,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11326}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11430}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 16390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -342,7 +348,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 24d055af9946940b5738bf0b5ed148b8
+      Hash: 46a97bb4de8783f2645fa63991471f54
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyControl
@@ -366,7 +372,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: d6fb9099df3b68fcfc255dc4c349b593
+      Hash: d12e4b6c7600bc2ee38080eabbf4e17c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MagicCircle
@@ -438,7 +444,7 @@ ScriptsOnlyBuild:
     className: PlayerAnimation
   - hash:
       serializedVersion: 2
-      Hash: 6b3cc0239239418da7ed0cdfee387279
+      Hash: a4d4c9550183dc4c0f09ccafb715abd1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyGuard
@@ -450,7 +456,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 24d055af9946940b5738bf0b5ed148b8
+      Hash: 46a97bb4de8783f2645fa63991471f54
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyImp
@@ -606,6 +612,12 @@ ScriptsOnlyBuild:
     className: EnemyMovimentType
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Teleport
+  - hash:
+      serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -694,6 +706,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelfDestruction
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

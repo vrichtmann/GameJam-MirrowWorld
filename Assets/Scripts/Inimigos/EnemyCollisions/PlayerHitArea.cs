@@ -10,7 +10,7 @@ public class PlayerHitArea : MonoBehaviour{
             PlayerMove playerMove = collision.gameObject.GetComponentInParent<PlayerMove>();
             EnemyControl enemyControl = this.GetComponentInParent<EnemyControl>();
 
-            if (playerMove.isDead == enemyControl.isDead && !enemyControl.beAttacking){
+            if (!enemyControl.inteleport && playerMove.isDead == enemyControl.isDead && !enemyControl.beAttacking){
                 EnemyControl enemyMoviment = this.GetComponentInParent<EnemyControl>();
                 enemyMoviment.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.Player;
             }
@@ -22,7 +22,7 @@ public class PlayerHitArea : MonoBehaviour{
             PlayerMove playerMove = collision.gameObject.GetComponentInParent<PlayerMove>();
             EnemyControl enemyControl = this.GetComponentInParent<EnemyControl>();
 
-            if (playerMove.isDead == enemyControl.isDead && !enemyControl.beAttacking){
+            if (!enemyControl.inteleport && playerMove.isDead == enemyControl.isDead && !enemyControl.beAttacking){
                 enemyControl.enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
                 enemyControl.setRandomPos();
             }

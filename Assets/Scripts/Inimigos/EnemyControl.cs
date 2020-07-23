@@ -18,6 +18,7 @@ public class EnemyControl : MonoBehaviour
     public bool isDead = false;
     public bool beAttacking = false;
     public bool playerDamage = false;
+    public bool inteleport = false;
 
     public int cooldownAttack = 0;
     public int cooldownAttackTimer = 50;
@@ -44,6 +45,7 @@ public class EnemyControl : MonoBehaviour
     public Transform playerPos;
     public EnemiesManager EnemiesManager;
     public GameObject enemyManager;
+    public GameObject smokePrefab;
 
 
     public void setRandomPos(){
@@ -98,16 +100,25 @@ public class EnemyControl : MonoBehaviour
     public void changeWold(){
         enemyMovimentType = EnemyMovimentType.enemiesMovimentType.RandomMove;
 
-        Debug.Log("CHANGE WORLD");
-        //isDead = !isDead;
+        Instantiate(smokePrefab, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), transform.rotation);
+        this.myAnimator.GetComponent<SpriteRenderer>().enabled = false;
+        inteleport = true;
+        StartCoroutine(change(1.0f));
+    }
 
-        if (currentWorld == AreaType.areaType.deadWorld){
+    private IEnumerator change(float waitTime){
+        yield return new WaitForSeconds(waitTime);
+
+        inteleport = false;
+        this.myAnimator.GetComponent<SpriteRenderer>().enabled = true;
+
+        if (currentWorld == AreaType.areaType.deadWorld)
+        {
             currentWorld = AreaType.areaType.world;
             currentArea = GameObject.FindGameObjectWithTag("woldArea");
             myAnimator.GetComponent<Animator>().SetBool("isDeadWolrd", false);
             isDead = false;
-        }
-        else{
+        }else{
             currentWorld = AreaType.areaType.deadWorld;
             currentArea = GameObject.FindGameObjectWithTag("deadWoldArea");
             myAnimator.GetComponent<Animator>().SetBool("isDeadWolrd", true);
@@ -116,7 +127,16 @@ public class EnemyControl : MonoBehaviour
         playerDamage = false;
 
         this.transform.position = new Vector3((this.transform.position.x * -1), (this.transform.position.y), this.transform.position.z);
+        Instantiate(smokePrefab, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), transform.rotation);
+
         setRandomPos();
+
+        StartCoroutine(contEnemies(0.2f));
+    }
+
+    private IEnumerator contEnemies(float waitTime){
+        yield return new WaitForSeconds(waitTime);
         enemyManager.GetComponent<EnemiesManager>().checkEnemieCount();
     }
+
 }
