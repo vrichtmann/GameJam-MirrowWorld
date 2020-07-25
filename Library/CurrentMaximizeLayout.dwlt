@@ -23,10 +23,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 917, y: 566}
-  m_MaxSize: {x: 22012, y: 12066}
+  m_MinSize: {x: 917, y: 544}
+  m_MaxSize: {x: 22012, y: 12044}
   vertical: 0
-  controlID: 16938
+  controlID: 15846
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 859
     height: 947
-  m_MinSize: {x: 202, y: 566}
-  m_MaxSize: {x: 4002, y: 12066}
+  m_MinSize: {x: 202, y: 544}
+  m_MaxSize: {x: 4002, y: 12044}
   vertical: 1
-  controlID: 16939
+  controlID: 15792
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.8394988, y: -0.32721114, z: -25.943363}
+    m_Target: {x: -61.969936, y: 280.05902, z: -351.61102}
     speed: 2
-    m_Value: {x: -2.8394988, y: -0.32721114, z: -25.943363}
+    m_Value: {x: -61.969936, y: 280.05902, z: -351.61102}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -231,9 +231,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.762667
+    m_Target: 975.52704
     speed: 2
-    m_Value: 14.762667
+    m_Value: 975.52704
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 348
     width: 859
     height: 426
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -394,7 +394,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4cfbffffca3300006034000092340000aa340000b4340000
+      m_ExpandedIDs: 889dffffbe9dffff26a0ffff2aa0ffff72eeffff8aeeffff30f1ffff28f3ffff5af3ffff86f3ffffb2f3ffff34f5ffffbaf8ffff74fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -483,20 +483,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets/Scripts/initScreen
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player
+  - Assets/Scripts/initScreen
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\victor.richtmann\Desktop\Unity\GameJam-LITE
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 742f0000
-    m_LastClickedID: 12148
-    m_ExpandedIDs: 00000000882d00009e2e0000282f0000b632000000ca9a3b
+    m_SelectedIDs: 343e0000
+    m_LastClickedID: 15924
+    m_ExpandedIDs: 000000006e2d00009a2e0000c22e00002e2f0000de32000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -524,7 +524,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000882d00009e2e0000282f0000b632000000ca9a3b
+    m_ExpandedIDs: 000000006e2d0000c22e00002e2f0000de32000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -549,10 +549,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: eae9ffff
-    m_LastClickedInstanceID: -5654
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000da370000043800000e45000070c1000000000000e62d0000a6200200e4340000182e0000cc3f0000
+    m_ExpandedInstanceIDs: c6230000da370000043800000e45000070c1000000000000e62d0000a6200200e4340000182e0000f83c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -599,8 +599,8 @@ MonoBehaviour:
     y: 0
     width: 439
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
