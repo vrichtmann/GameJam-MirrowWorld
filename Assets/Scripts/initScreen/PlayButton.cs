@@ -35,6 +35,5 @@ public class PlayButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void TaskOnClick(){
         SceneManager.LoadScene("Level1");
-        Debug.Log("You have clicked the button!");
     }
 }
