@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CreditsButton
     - DepthManager
     - EnemiesManager
     - EnemyAnimation
@@ -34,8 +35,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -105,33 +109,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10670}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 10712}
+      Script: {instanceID: 10714}
     - Class: 114
-      Script: {instanceID: 10898}
+      Script: {instanceID: 10900}
     - Class: 114
-      Script: {instanceID: 11050}
+      Script: {instanceID: 11052}
     - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 11058}
     - Class: 114
-      Script: {instanceID: 11064}
+      Script: {instanceID: 11066}
     - Class: 114
-      Script: {instanceID: 11092}
+      Script: {instanceID: 11094}
     - Class: 114
-      Script: {instanceID: 11114}
+      Script: {instanceID: 11118}
     - Class: 114
-      Script: {instanceID: 11134}
+      Script: {instanceID: 11138}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11286}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11432}
+      Script: {instanceID: 11436}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -178,19 +182,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10668}
+      Script: {instanceID: 10574}
     - Class: 114
-      Script: {instanceID: 10898}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 10912}
+      Script: {instanceID: 10900}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 10914}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11106}
     - Class: 114
-      Script: {instanceID: 11538}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 15930}
+      Script: {instanceID: 11332}
+    - Class: 114
+      Script: {instanceID: 11542}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -240,7 +246,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 1a52a472510b28d1a7536a4506888b3e
+      Hash: a78f3443f5bf63e86b29f5c0974c96c3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HeartManager
@@ -474,6 +480,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: ac543099c84c5378372cacc8c399fd4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CreditsButton
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -598,6 +610,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 6ae9ef551ecce754228c307d4b76c37f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayButton
   - hash:
       serializedVersion: 2
       Hash: a997e9b1f5f1b1258f5effa026777aef
@@ -760,12 +778,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 6ae9ef551ecce754228c307d4b76c37f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayButton
   platform: 5
   scenePathNames:
   - Assets/Scenes/telaInicial.unity

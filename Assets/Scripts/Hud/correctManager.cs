@@ -8,7 +8,7 @@ public class correctManager : MonoBehaviour{
     public int contCorrect = 0;
 
     private void Awake(){
-        hideCorrectResponse();
+       // hideCorrectResponse();
     }
 
     public void hideCorrectResponse(){
@@ -20,7 +20,7 @@ public class correctManager : MonoBehaviour{
     public void showCorrectResponse(){
         contCorrect++;
         for (int i = 0; i < contCorrect; i++){
-            if(correctManagers[i]) correctManagers[i].SetActive(true);
+            if(correctManagers[correctManagers.Length - contCorrect]) correctManagers[correctManagers.Length - contCorrect].SetActive(false);
         }
     }
 
